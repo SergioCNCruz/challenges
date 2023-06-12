@@ -27,7 +27,10 @@ def find_unique_number(numbers: List) -> int:
     - Consider using the XOR (^) operator to efficiently solve this problem.
     """
     # TODO: Add your solution bellow
-    pass
+    result = 0
+    for number in numbers:
+        result ^= number
+    return result
 
 
 @pytest.mark.parametrize(

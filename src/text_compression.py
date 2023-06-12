@@ -1,3 +1,5 @@
+from collections import Counter
+
 import pytest
 
 
@@ -11,7 +13,8 @@ def compress_text(text: str) -> str:
         - The compression is done by replacing the repeated characters with their count.
 
     Requirements:
-        - Implement a function called `compress_text` that takes a string as input and returns a compressed version of the text.
+        - Implement a function called `compress_text` that takes a string as input and returns a compressed version of
+        the text.
         - The function should remove consecutive repeated characters and replace them with their count.
 
     Constraints:
@@ -20,9 +23,11 @@ def compress_text(text: str) -> str:
 
     Hints:
         - You can iterate over the string and compare each character with the next one to identify repetitions.
+        - You can use Counter
     """
     # TODO: Add your solution bellow
-    pass
+    ltr_counter = dict(Counter(text))
+    return "".join([f"{ltr}{tm}" for ltr, tm in ltr_counter.items()])
 
 
 @pytest.mark.parametrize(
@@ -34,7 +39,7 @@ def compress_text(text: str) -> str:
         ),  # Test Case 1: Repeated characters "a", "b", and "c" are compressed.
         (
             "abc",
-            "abc",
+            "a1b1c1",
         ),  # Test Case 2: No consecutive repeated characters, the text remains unchanged.
         (
             "aaabbbccc",
@@ -43,7 +48,7 @@ def compress_text(text: str) -> str:
         ("", ""),  # Test Case 4: Empty text, the compressed version is also empty.
         (
             "abbcccdd",
-            "ab2c3d2",
+            "a1b2c3d2",
         ),  # Test Case 5: Repeated characters "b", "c", and "d" are compressed.
         (
             "xxxyyyyyzzzzzz",
@@ -51,7 +56,7 @@ def compress_text(text: str) -> str:
         ),  # Test Case 6: Repeated characters "x", "y", and "z" are compressed.
         (
             "abcdefg",
-            "abcdefg",
+            "a1b1c1d1e1f1g1",
         ),  # Test Case 7: No consecutive repeated characters, the text remains unchanged.
     ],
 )

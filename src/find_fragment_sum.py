@@ -42,6 +42,11 @@ def find_fragment_with_sum(nums: List[int], target_sum: int) -> List[int]:
             up to the target sum of 15.
     """
     # TODO: Implement your solution below
+    for idx, n in enumerate(nums):
+        for t in range(idx, len(nums) + 1):
+            if target_sum == sum(nums[idx:t]):
+                return nums[idx:t]
+    return []
 
 
 @pytest.mark.parametrize(

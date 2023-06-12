@@ -1,3 +1,5 @@
+from collections import Counter
+
 from typing import List
 
 import pytest
@@ -31,7 +33,9 @@ def sort_by_frequency(data: List[int]) -> List[int]:
         sorting key.
     """
     # TODO: Add your solution below
-    pass
+    frequency_counter = Counter(data)
+    sorted_data = sorted(data, key=lambda x: (-frequency_counter[x], data.index(x)))
+    return sorted_data
 
 
 @pytest.mark.parametrize(
@@ -50,8 +54,8 @@ def sort_by_frequency(data: List[int]) -> List[int]:
             ["a", "a", "b", "b", "c"],
         ),  # Test case 3: Element "a" appears most frequently, followed by "b" and "c"
         (
-            [1, 2, 3, 3, 3, 4, 4, 4, 4],
-            [4, 4, 4, 4, 3, 3, 3, 2, 1],
+            [1, 2, 2, 3, 3, 3, 4, 4, 4, 4],
+            [4, 4, 4, 4, 3, 3, 3, 2, 2, 1],
         ),  # Test case 4: Element 4 appears most frequently, followed by 3, 2, and 1
         ([], []),  # Test case 5: Empty list
         (
