@@ -58,7 +58,9 @@ def find_fragment_with_sum(nums: List[int], target_sum: int) -> List[int]:
         ([14, 24, 34, 44, 4], 4, [4]),
     ],
 )
-def test_find_fragment_with_sum(nums: List[int], target_sum: int, expected_fragment: List[int]):
+def test_find_fragment_with_sum(
+    nums: List[int], target_sum: int, expected_fragment: List[int]
+):
     fragment = find_fragment_with_sum(nums, target_sum)
     assert fragment == expected_fragment
 
