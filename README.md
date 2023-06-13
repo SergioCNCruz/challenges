@@ -5,11 +5,13 @@ This repository contains a collection of coding challenges. Each challenge prese
 ## How to Use
 
 1. Clone the repository to your local machine.
-2. Navigate to the desired challenge directory.
-3. Read the challenge description in the file.
-4. Implement your solution in the corresponding source code file.
-5. Run the test cases to verify the correctness of your solution.
-6. Repeat the process for other challenges as desired.
+2. Install the requirements using [Poetry](https://python-poetry.org/docs/#installation)
+3. Run the ```./setup.sh ``` to install Pre-commit
+4. Navigate to the desired challenge directory.
+5. Read the challenge description in the file.
+6. Implement your solution in the corresponding source code file.
+7. Run the test cases to verify the correctness of your solution.
+8. Repeat the process for other challenges as desired.
 
 ## Contributions
 

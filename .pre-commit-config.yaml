@@ -1,0 +1,17 @@
+repos:
+    -   repo: https://github.com/pre-commit/mirrors-mypy
+        rev: ''  # Use the sha / tag you want to point at
+        hooks:
+        -   id: mypy
+
+    -   repo: https://github.com/PyCQA/isort
+        rev: ''  # Use the sha / tag you want to point at
+        hooks:
+        -   id: isort
+            args: ["--float-to-top"]
+
+    - repo: https://github.com/psf/black
+      rev: 21.9b0
+      hooks:
+          - id: black
+            args: [--safe]
