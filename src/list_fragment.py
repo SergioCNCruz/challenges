@@ -31,7 +31,7 @@ def get_fragments(lst: List[int]) -> List:
 
     """
     # TODO: Add your solution below
-    return [lst[:idx+1] for idx in range(len(lst))]
+    return [lst[: idx + 1] for idx in range(len(lst))]
 
 
 @pytest.mark.parametrize(
