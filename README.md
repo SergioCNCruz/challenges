@@ -22,3 +22,30 @@ Contributions to this repository are welcome! If you have additional challenges 
 This repository is licensed under the MIT License. See the [LICENSE](./LICENSE) file for more details.
 
 Feel free to customize and expand this README based on your specific needs. Provide instructions, examples, and any other relevant information to make it helpful for users interacting with your challenges repository.
+
+## Web Scraper API
+
+This repository also includes a minimal Selenium-based scraper exposed via a FastAPI application.  The service stores scraped
+page titles in a PostgreSQL database and can be launched with Docker Compose.
+
+### Running with Docker Compose
+
+1. Build and start the stack:
+
+   ```bash
+   docker-compose up --build
+   ```
+
+2. Scrape a web page:
+
+   ```bash
+   curl -X POST "http://localhost:8000/scrape?url=https://example.com"
+   ```
+
+3. List saved results:
+
+   ```bash
+   curl http://localhost:8000/results
+   ```
+
+Dependencies are managed with [Poetry](https://python-poetry.org/).
